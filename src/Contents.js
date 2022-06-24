@@ -1,5 +1,6 @@
 import { SettingOutlined } from '@ant-design/icons';
-import { Cascader, Input, Select, Space, Button } from 'antd';
+import { Card, Input, Select, Space, Button } from 'antd';
+import {useState} from 'react';
 const { Option } = Select;
 const selectBefore = (
   <Select defaultValue="http://" className="select-before">
@@ -8,37 +9,51 @@ const selectBefore = (
   </Select>
 );
 const selectAfter = (
-  <Select defaultValue=".com" className="select-after">
-    <Option value=".com">.com</Option>
-    <Option value=".jp">.jp</Option>
-    <Option value=".cn">.cn</Option>
-    <Option value=".org">.org</Option>
+  <Select defaultValue="/events" className="select-after">
+    <Option value="/events">/events</Option>
   </Select>
 );
 
-const Contents = () => (
-  <>
-  <Space direction="vertical">
-    <Input addonBefore="http://" addonAfter=".com" defaultValue="mysite" />
-    <Input addonBefore={selectBefore} addonAfter={selectAfter} defaultValue="mysite" />
-    <Input addonAfter={<SettingOutlined />} defaultValue="mysite" />
-    <Input addonBefore="http://" suffix=".com" defaultValue="mysite" />
-    <Input
-      addonBefore={
-        <Cascader
-          placeholder="cascader"
-          style={{
-            width: 150,
-          }}
-        />
-      }
-      defaultValue="mysite"
-    />
-  </Space>
-  <Button type="primary">
-      Primary Button
+
+const Contents = () => {
+const [domain, setDomain] = useState('localhost:8080');
+const [pixel, setPixel] = useState('');
+
+const onClick = () => {
+  console.log("Clicked:", domain, pixel);
+  let bodyObj = {};
+  bodyObj['pixel'] = pixel;
+  bodyObj['data'] = {};
+  fetch(`${domain}`, {
+    method: 'POST',
+    body: JSON.stringify(bodyObj),
+  });
+}
+
+const onChange =(event) => {
+    const input = event.target;
+    if (!input.value?.length) {
+      return;
+    }
+    if(input.id=='domain') {
+      setDomain(input.value);
+    }
+    if(input.id=='pixel') {
+      setPixel(input.value);
+    }
+  };
+
+  return (<>
+  <Space direction="horizontal">
+  <Card title="Post To Endpoint" size="large">
+      <Input id = 'domain' placeholder="Domain, e.g. http://localhost:8080/events" onChange= {onChange}/>
+      <Input id = 'pixel' placeholder="Meta PixelId" onChange = {onChange} required/>
+      <Button type="primary" onClick = {onClick}>
+        Purchase
     </Button>
-  </>  
-);
+    </Card>
+  </Space>
+  </>);
+};
 
 export default Contents;
