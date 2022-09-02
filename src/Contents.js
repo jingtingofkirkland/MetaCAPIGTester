@@ -15,6 +15,7 @@ const selectAfter = (
 );
 
 
+
 const Contents = () => {
 const [domain, setDomain] = useState('localhost:8080');
 const [pixel, setPixel] = useState('');
@@ -43,7 +44,7 @@ const onChange =(event) => {
     }
   };
 
-  return (<>
+  return (
   <Space direction="horizontal">
   <Card title="Post To Endpoint" size="large">
       <Input id = 'domain' placeholder="Domain, e.g. http://localhost:8080/events" onChange= {onChange}/>
@@ -53,7 +54,7 @@ const onChange =(event) => {
     </Button>
     </Card>
   </Space>
-  </>);
+  );
 };
 
 export default Contents;
