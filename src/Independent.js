@@ -12,14 +12,14 @@ const Independent = () => {
       currency: 'USD'
     },
     {
-      name: "Chinese Dish",
+      name: "British Dish",
       price: 15.0,
-      currency: 'CNY'
+      currency: 'GBP'
     },
     {
       name: "India Buffet",
       price: 20.0,
-      currency: 'IND'
+      currency: 'INR'
     }
   ]
 
@@ -29,7 +29,7 @@ const Independent = () => {
   }
 
   async function getScript() {
-    fetch('http://localhost:8080/sdk/capig-events.js', {
+    fetch('https://independent-pixel-devo.cbinternal.com/sdk/capig-events.js', {
       mode: 'no-cors',
     })
   }

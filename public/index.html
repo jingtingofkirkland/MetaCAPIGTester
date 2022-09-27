@@ -33,7 +33,7 @@
                     {name: "cloudbridge"},
                     //{name: "facebook", sendPolicies: sendPolicies},
                 ],
-                "host":"https://independent-pixel-devo.cbinternal.com/",
+                "host":"https://zyx-helpinglink-org-capig.cbinternal.com",
                 "globalVar":"cbq",
             }
         };
@@ -46,12 +46,25 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       `${__cbSdkSettings.cbq.host}/sdk/capig-events.js`);
 
-      cbq('init', '5662699603758049');
+      cbq('init', '1076615046533228');
       cbq('track', 'PageView');
  </script>
  <!-- END CloudBridge Script Code -->
 
  <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '405425471634430');
+  fbq('set','cbData.oneTrustId', window.sessionStorage.getItem('userId'), '405425471634430');
+  fbq('track', 'PageView');
+  </script>
   <!-- End Meta Pixel Code -->
 
 

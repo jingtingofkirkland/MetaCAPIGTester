@@ -29,12 +29,18 @@ function App() {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Routes>
+        <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }} >
+        <Routes >
           <Route path="/independent" element = {<Independent />} />
           <Route path="/onetrust" element = {<OneTrust/>} />
           <Route path="/" element = {<Contents/>} />
 
         </Routes>
+        </div>
       </div>
     </Router>
   );
