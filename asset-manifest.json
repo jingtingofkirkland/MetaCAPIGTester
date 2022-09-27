@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MetaCAPIGTester/static/css/main.cac77bb6.css",
+    "main.js": "/MetaCAPIGTester/static/js/main.2e60ed75.js",
+    "static/js/787.a8c23ed3.chunk.js": "/MetaCAPIGTester/static/js/787.a8c23ed3.chunk.js",
+    "index.html": "/MetaCAPIGTester/index.html",
+    "main.cac77bb6.css.map": "/MetaCAPIGTester/static/css/main.cac77bb6.css.map",
+    "main.2e60ed75.js.map": "/MetaCAPIGTester/static/js/main.2e60ed75.js.map",
+    "787.a8c23ed3.chunk.js.map": "/MetaCAPIGTester/static/js/787.a8c23ed3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cac77bb6.css",
+    "static/js/main.2e60ed75.js"
+  ]
+}
