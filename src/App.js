@@ -1,6 +1,8 @@
 import Contents from './Contents'
 import Independent from './Independent'
 import OneTrust from './OneTrust'
+import LoadTesting from './LoadTesting'
+import AAMPage from './AAMPage'
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +13,6 @@ import 'antd/dist/antd.min.css';
 
 function App() {
   return (
-    <Router>
       <div>
         <nav>
           <ul>
@@ -24,6 +25,18 @@ function App() {
             <li>
               <Link to="/onetrust">One Trust</Link>
             </li>
+            <li>
+              <Link to="/aam">AAM Testing</Link>
+            </li>
+            <li>
+              <Link to="/static">Static Html</Link>
+              </li>
+              <li>
+              <Link to="/load">Load Testing</Link>
+              </li>
+              <li>
+              <Link to="/content">Main Content</Link>
+              </li>
           </ul>
         </nav>
 
@@ -37,12 +50,16 @@ function App() {
         <Routes >
           <Route path="/independent" element = {<Independent />} />
           <Route path="/onetrust" element = {<OneTrust/>} />
+          <Route path="/load" element = {<LoadTesting/>} />
+          <Route path="/content" element = {<Contents/>} />
+          <Route path="/aam" element = {<AAMPage />} />
           <Route path="/" element = {<Contents/>} />
+
+
 
         </Routes>
         </div>
       </div>
-    </Router>
   );
 }
 

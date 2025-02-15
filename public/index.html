@@ -18,6 +18,43 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <script>
+      var __cbSdkHost = "http://localhost:8080/";
+      var __cbSdkSettings={'cbq':{destinations:[{name:"cloudbridge"},],
+      "host":__cbSdkHost,"globalVar":"cbq",}};
+      !function(a,h,e,v,n,t,s)
+        {if(a.cbq)return;n=a.cbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!a._cbq)a._cbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=h.createElement(e);t.async=!0;
+        t.src=v;s=h.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        __cbSdkHost+'sdk/capig-events.js');
+      cbq('init', "1697662976851");
+      cbq('loadConfig', "1697662976851");
+      cbq('track', 'PageView');
+      </script>
+
+      <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '337570375319394');
+  fbq('init', '1296510287734738'); // AAM Off
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1076615046533228&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -28,54 +65,11 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>CAPIG Tester</title>
-    <!-- CloudBridge Script Code -->
-    <script>
-      var __cbSdkSettings = {
-        'cbq': {
-                destinations: [
-                    {name: "cloudbridge"},
-                    //{name: "facebook", sendPolicies: sendPolicies},
-                ],
-                "host":"https://zyx-helpinglink-org-capig.cbinternal.com",
-                "globalVar":"cbq",
-            }
-        };
-      !function(f,b,e,v,n,t,s)
-      {if(f.cbq)return;n=f.cbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._cbq)f._cbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      `${__cbSdkSettings.cbq.host}/sdk/capig-events.js`);
 
-      cbq('init', '1076615046533228');
-      cbq('track', 'PageView');
- </script>
- <!-- END CloudBridge Script Code -->
 
- <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '405425471634430');
-  fbq('set','cbData.oneTrustId', window.sessionStorage.getItem('userId'), '405425471634430');
-  fbq('track', 'PageView');
-  </script>
-  <!-- End Meta Pixel Code -->
-  <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8bad1348-0ed5-4ac4-ad98-1bc6b0c0b413-test" ></script>
-  <script type="text/javascript">
-  function OptanonWrapper() { }
-  </script>
-  <!-- OptanonConsentNoticeEnd -->
   </head>
   <body>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- OneTrust Web Form start -->
 <style>
